@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../img/Logo.jpg";
-//import '../img/Logo.jpg';
+import '../style/App.css';
 
 const NavBar = () => {
     // const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const NavBar = () => {
 
     // const activo = useSelector(store => store.usuario.activo)
 
-    const activo = "true"
+    const activo = ""
 
     return (
 
@@ -48,8 +48,8 @@ const NavBar = () => {
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                    <NavLink className="btn btn-outline-secondary mr-2 " to="/home" exact>Inicio</NavLink>
-                    <button className="btn btn-outline-secondary mr-2 " onClick={() => cerrarSesion()}>
+                    <NavLink className="btn btn-outline-secondary mr-sm-2 " to="/home" exact>Inicio</NavLink>
+                    <button className="btn btn-outline-secondary mr-sm-2 " onClick={() => cerrarSesion()}>
                         Cerrar Sesión
                     </button>
                 </Navbar>
@@ -61,7 +61,7 @@ const NavBar = () => {
                         <Link to='/home'><img src={Logo} height="40" alt="logo" /></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <NavLink className="btn btn-outline-secondary mr-2 btn-md" to="/login" exact>Login</NavLink>
+                    <NavLink className="btn btn-outline-secondary mr-sm-2 btn-md" to="/login" exact>Login</NavLink>
                 </Navbar>
             </>
         )
