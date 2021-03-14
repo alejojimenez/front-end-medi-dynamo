@@ -5,19 +5,25 @@ import './style/App.css';
 
 //Secciones
 import Home from '../src/view/Home';
-import NavBar from '../src/component/NavBar';
-import Login from '../src/component/Login';
+// import NavBar from '../src/component/NavBar';
+import Login from './view/Login';
+import Signup from './view/Signup';
 import Footer from '../src/component/Footer';
 
 function App() {
   return (
     <>
       <Router>
-          <NavBar />
+          {/* <NavBar /> */}
           <Switch>
-            <Route component={Login} path="/login"/>
             <Route exact path="/home" component={Home}/>
-            {/*<Route path="/compania" component={ViewCompany}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Signup}/>
+            <Route render={() => <h1>Not Found</h1>}/>
+
+            {/*<Route component={Login} path="/login"/>
+            <Route component={Signup} path="/signup"/>
+            <Route path="/compania" component={ViewCompany}/>
             <Route path="/contenedores" component={Containers}/>
             <Route path="/notificaciones" component={Notifications}/>
             <Route path="/operadores" component={RootOperator}/>
