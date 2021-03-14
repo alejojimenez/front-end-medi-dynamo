@@ -1,6 +1,15 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
+            // captura de datos en inputs formulario
+            user_data:{
+                email:"",
+                password:"",
+                name:"",
+                username:""
+            },
+
+
             container: [],
             editContainer: {},
             typeOfMaterial: '',
@@ -63,25 +72,26 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
         },
         actions: {
-            onChangeUser: evento => {
+            // funcion input controlado - captura de datos
+            onChangeUser: (evento) => {
                 const store = getStore();
-                const { user_signup } = store;
-                user_signup[evento.target.name] = evento.target.value
-                setStore({ user_signup })
-                console.log(evento.target.name)
-                console.log(store.user_signup)
+                const {user_data} = store;
+                user_data[evento.target.name] = evento.target.value
+                setStore({user_data});
             },
-            onSubmitSignup: evento => {
-                evento.preventDefault()
-                const store = getStore()
+            // funcion enviar datos capturados
+            onSubmitSignup: (evento) => {
+                evento.preventDefault();
+                const store = getStore();
+                console.log(evento)
                 let options = {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(store.user_signup)
+                    body: JSON.stringify(store.user_data)
                 }
-                fetch("http://localhost:5000/users/register", options)
+                fetch("http://localhost:5000/signup", options)
                     .then(resp => resp.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error))

@@ -23,21 +23,25 @@ const NavBar = () => {
                         <img src={Logo} height="40" alt="logo" />
                     </Link>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <NavLink
-                    className="btn btn-outline-secondary mr-sm-2 btn-md"
-                    to="/register"
-                    exact
-                    >
-                        Registrarse
-                </NavLink>
-                <NavLink
-                    className="btn btn-outline-secondary mr-sm-2 btn-md"
-                    to="/login"
-                    exact
-                    >
-                        Iniciar Sesion
-                </NavLink>
+                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+                <Nav className="mr-auto">
+                    <NavLink
+                        className="btn btn-outline-secondary mr-sm-2 btn-md"
+                        size="sm"
+                        to="/register"
+                        exact
+                        >
+                            Registrarse
+                    </NavLink>
+                    <NavLink
+                        className="btn btn-outline-secondary mr-sm-2 btn-md"
+                        size="sm"
+                        to="/login"
+                        exact
+                        >
+                            Iniciar Sesión
+                    </NavLink>
+                </Nav>
             </Navbar>
         </>
 
