@@ -11,17 +11,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             currentUser: "",
 
+            allPatients: [],
+
         },
         actions: {
-            // funcion input controlado - captura de datos
+            /////////////////////////////////////////////////
+            // funcion input controlado - captura de datos //
+            /////////////////////////////////////////////////
             onChangeUser: (evento) => {
                 const store = getStore();
                 const {user_data} = store;
                 user_data[evento.target.name] = evento.target.value
                 setStore({user_data});
             },
-
-            // funcion enviar datos capturados
+            /////////////////////////////////////
+            // funcion registrar usuarios      //
+            /////////////////////////////////////
             onSubmitSignup: (evento) => {
                 evento.preventDefault();
                 const store = getStore();
@@ -45,6 +50,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .catch(error => console.log(error))
                 }
             },
+            ////////////////////////////
+            // funcion iniciar sesion //
+            ////////////////////////////
             onSubmitSignin: (evento) => {
                 evento.preventDefault();
                 const store = getStore();
@@ -74,10 +82,100 @@ const getState = ({ getStore, getActions, setStore }) => {
                         })
                         .catch(error => {
                             console.error("Error:", error);
-                        });
-                    }
+                    });
+                }
             },
 
+            //////////////////////////////////////
+            // Sesiones funciones API REST CRUD //
+            //////////////////////////////////////
+
+            ///////////////////////////////////////////
+			// Agregar un nuevo Contacto a la Agenda //
+            ///////////////////////////////////////////
+			addPatients: (name, address, phone, email) => {
+				console.log("---Flux add - Put Contact---");
+				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						full_name: name,
+						email,
+						agenda_slug: "alejo",
+						address,
+						phone
+					})
+				})
+					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
+					.then(({ status, resMsg }) => {
+						if (status === 400) alert(resMsg);
+					})
+					.catch(err => alert(err.message));
+			},
+            ///////////////////////////////////////
+			// Eliminar un Contacto de la Agenda //
+            ///////////////////////////////////////
+			delPatient: idToDelete => {
+				console.log("---Flux Delete Contact---");
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToDelete}`, {
+					method: "DELETE",
+					headers: { "Content-Type": "application/json" }
+				})
+					.then(res => res.json())
+					.then(() => {
+						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/alejo")
+							.then(red => red.json())
+							.then(data => setStore({ allContacts: data }));
+					})
+					.catch(err => alert(err.message));
+			},
+            /////////////////////////////////////////////////
+			// Cambiar valores de un Contacto de la Agenda //
+            /////////////////////////////////////////////////
+			editPatient: (name, address, phone, email, idToEdit) => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToEdit}`, {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						agenda_slug: "alejo",
+						full_name: name,
+						email,
+						address,
+						phone
+					})
+				})
+					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
+					.then(({ status, resMsg }) => {
+						if (status === 400) alert(resMsg);
+					})
+					.then(() => {
+						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/alejo")
+							.then(res => res.json())
+							.then(data => setStore({ allContacts: data }));
+					})
+					.catch(err => alert(err.message));
+			},
+            ////////////////////////////////////////////////////////
+			// Obtener de la API todos los Contactos de la Agenda //
+            ////////////////////////////////////////////////////////
+			getPatients: () => {
+				console.log("---Flux Get Patients---");
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-type": "application/json"
+					}
+				};
+				fetch("http://127.0.0.1:5000/api/medidynamo/read/patients", config)
+					.then(response => response.json())
+					.then(data => {
+						console.log("--json-allPatients--", data);
+						setStore({ allPatients: data });
+					})
+					.catch(error => console.log(error));
+			}            
         },
     };
 };

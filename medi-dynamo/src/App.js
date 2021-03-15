@@ -9,6 +9,7 @@ import Home from '../src/view/Home';
 import Login from './view/Login';
 import Signup from './view/Signup';
 import Footer from '../src/component/Footer';
+import { Patients } from './view/Patients';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/home" component={Home}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Signup}/>
+            <Route exact path="/patients" component={Patients} />
             <Route render={() => <h1>Not Found</h1>}/>
 
             {/*<Route component={Login} path="/login"/>
