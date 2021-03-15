@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { Context } from "../store/appContext";
 import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../img/Logo.jpg";
 import "../style/App.css";
 
 const NavBar = () => {
+
+    const { store, actions } = useContext(Context);
+    console.log("Usuario Activo:", store.currentUser);
     // const dispatch = useDispatch()
 
     // const cerrarSesion = () => {
@@ -20,7 +24,7 @@ const NavBar = () => {
             <Navbar className="fixed-top" expand="lg">
                 <Navbar.Brand href="#home">
                     <Link to="/home">
-                        <img src={Logo} height="40" alt="logo" />
+                        <img src={Logo} height="42" alt="logo" />
                     </Link>
                 </Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}

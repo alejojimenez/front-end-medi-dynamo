@@ -2,9 +2,21 @@
   text-align: center;
 }
 
+.bg-card {
+  background-image: linear-gradient(to bottom right, #546BBD, #84899b);
+}
+
 .color-text-general {
   color: #546BBD;
+}
 
+.color-card-header {
+  color: aliceblue;
+}
+
+.error-login {
+  color: aliceblue;
+  text-align: center;
 }
 
 /* ####  Screen Desktop #### */

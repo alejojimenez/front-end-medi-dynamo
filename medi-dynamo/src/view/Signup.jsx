@@ -3,8 +3,9 @@ import { Context } from "../store/appContext";
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import '../style/App.css';
 import NavBar from "../component/NavBar";
+import PropTypes from "prop-types";
 
-const Signup = () => {
+const Signup = (props) => {
 
     const { store, actions } = useContext(Context);
 
@@ -15,11 +16,11 @@ const Signup = () => {
                 <div className="login-center">
                     <Row>
                         <Col>
-                            <Card border="primary" style={{ width: '24rem' }}>
-                                <Card.Header className="text-center mb-2 color-text-general"><h3><strong>REGISTRO DE USUARIO</strong></h3></Card.Header>
+                            <Card className="bg-card" border="primary" style={{ width: '24rem' }}>
+                                <Card.Header className="text-center mb-2 color-card-header"><h3><strong>REGISTRO DE USUARIO</strong></h3></Card.Header>
                                 <Card.Body className="text-center p-3">
                                     <Card.Text>
-                                        <form onSubmit={(evento) => actions.onSubmitSignup(evento)}>
+                                        <form onSubmit={(evento) => {actions.onSubmitSignup(evento); props.history.push("/login")}}>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text" id="basic-addon1">E-mail</span>
@@ -28,7 +29,7 @@ const Signup = () => {
                                                     type="email" 
                                                     className="form-control" 
                                                     id="inputEmail" 
-                                                    placeholder="Ingrese correo electronico" 
+                                                    placeholder="Ingrese su name@example.com" 
                                                     aria-label="Email" 
                                                     aria-describedby="basic-addon1" 
                                                     name="email" 
@@ -85,9 +86,15 @@ const Signup = () => {
                                                 />
                                             </div>
                                             <div>
-                                                <Button type="submit" variant="primary" block>Registrarse</Button>
+                                                <Button 
+                                                    type="submit" 
+                                                    variant="outline-light" 
+                                                    block>
+                                                        Registrarse
+                                                </Button>
                                             </div>
-                                        </form>                                        
+                                        </form>
+                                        {/* <Link to="/login"></Link> */}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>                                   
@@ -97,6 +104,11 @@ const Signup = () => {
             </div>
         </>
     );
+};
+
+Signup.propTypes = {
+	match: PropTypes.object,
+	history: PropTypes.object
 };
 
 export default Signup;

@@ -16,6 +16,7 @@ function App() {
       <Router>
           {/* <NavBar /> */}
           <Switch>
+            <Redirect exact from="/" to="/home" />
             <Route exact path="/home" component={Home}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Signup}/>
