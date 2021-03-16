@@ -2,77 +2,166 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
+import { Col, Row } from "react-bootstrap";
 
 export const AddPatient = props => {
 	const { actions, store } = useContext(Context);
 	console.log("props en Component AddPatient", props);
 	const [state, setState] = useState({
-		name: null,
+		rut: null,
+		firstname: null,
+		lastname: null,
+		age: null,
+		sex: null,
 		address: null,
-		phone: null,
-		email: null
+		telephone: null,
+		email: null,
+		forecast: null
 	});
 
 	return (
 		<div className="container">
 			<div>
-				<h1 className="text-center mt-5">Add a new contact</h1>
+				<h1 className="text-center mt-5">Agregar nuevo paciente</h1>
 				<form>
-					<div className="form-group">
-						<label>Full Name</label>
-						<input
-							onChange={event => {
-								setState({ ...state, name: event.target.value });
-							}}
-							type="text"
-							className="form-control"
-							placeholder="Full Name"
-						/>
-					</div>
-					<div className="form-group">
-						<label>Email</label>
-						<input
-							onChange={event => {
-								setState({ ...state, email: event.target.value });
-							}}
-							type="email"
-							className="form-control"
-							placeholder="Enter email"
-						/>
-					</div>
-					<div className="form-group">
-						<label>Phone</label>
-						<input
-							onChange={event => {
-								setState({ ...state, phone: event.target.value });
-							}}
-							type="phone"
-							className="form-control"
-							placeholder="Enter phone"
-						/>
-					</div>
-					<div className="form-group">
-						<label>Address</label>
-						<input
-							onChange={event => {
-								setState({ ...state, address: event.target.value });
-							}}
-							type="text"
-							className="form-control"
-							placeholder="Enter address"
-						/>
-					</div>
+					<Row>
+						<Col md = {12}>
+							<div className="form-group">
+								<label>RUT:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, rut: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese rut del paciente"
+								/>
+							</div>
+						</Col>
+					</Row>
+					<Row>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Nombres:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, firstname: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese nombre del paciente"
+								/>
+							</div>
+						</Col>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Apellidos:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, lastname: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese apellidos del paciente"
+								/>
+							</div>
+						</Col>
+					</Row>
+					<Row>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Edad:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, age: event.target.value });
+									}}
+									type="number"
+									className="form-control"
+									placeholder="Ingrese edad del paciente"
+								/>
+							</div>
+						</Col>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Sexo:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, sex: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese sexo del paciente"
+								/>
+							</div>
+						</Col>
+					</Row>
+					<Row>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Direccion:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, address: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese dirección Hab. del paciente"
+								/>
+							</div>
+						</Col>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Telefono:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, telephone: event.target.value });
+									}}
+									type="phone"
+									className="form-control"
+									placeholder="Ingrese número de telefono del paciente"
+								/>
+							</div>
+						</Col>
+					</Row>
+					<Row>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>E-mail:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, email: event.target.value });
+									}}
+									type="email"
+									className="form-control"
+									placeholder="Ingrese correo electronico del paciente"
+								/>
+							</div>
+						</Col>
+						<Col md = {6}>
+							<div className="form-group">
+								<label>Previsión Social:</label>
+								<input
+									onChange={event => {
+										setState({ ...state, forecast: event.target.value });
+									}}
+									type="text"
+									className="form-control"
+									placeholder="Ingrese previsión social de paciente"
+								/>
+							</div>
+						</Col>
+					</Row>
 					<button
 						onClick={() => {
-							actions.addContacts(state.name, state.address, state.phone, state.email);
-							props.history.push("/");
+							actions.addContacts(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
+							props.history.push("/patients");
 						}}
 						type="button"
 						className="btn btn-primary form-control">
 						save
 					</button>
-					<Link className="mt-3 w-100 text-center" to="/">
-						or get back to contacts
+					<Link className="mt-3 w-100 text-center" to="/patients">
+						Retornar
 					</Link>
 				</form>
 			</div>

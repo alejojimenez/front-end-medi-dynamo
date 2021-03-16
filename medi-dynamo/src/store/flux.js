@@ -93,17 +93,21 @@ const getState = ({ getStore, getActions, setStore }) => {
             ///////////////////////////////////////////
 			// Agregar un nuevo Contacto a la Agenda //
             ///////////////////////////////////////////
-			addPatients: (name, address, phone, email) => {
-				console.log("---Flux add - Put Contact---");
-				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+			addPatients: (rut, firstname, lastname, age, sex, address, telephone, email, forecast) => {
+				console.log("---Flux add - Put Patient---");
+				fetch("/api/medidynamo/create/patients", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-						full_name: name,
-						email,
-						agenda_slug: "alejo",
-						address,
-						phone
+                        rut,
+                        firstname,
+                        lastname,
+                        age,
+                        sex,
+                        address,
+                        telephone,
+                        email,
+                        forecast
 					})
 				})
 					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
@@ -117,13 +121,13 @@ const getState = ({ getStore, getActions, setStore }) => {
             ///////////////////////////////////////
 			delPatient: idToDelete => {
 				console.log("---Flux Delete Contact---");
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToDelete}`, {
+				fetch(`http://127.0.0.1:5000/api/medidynamo/delete/patient/${idToDelete}`, {
 					method: "DELETE",
 					headers: { "Content-Type": "application/json" }
 				})
 					.then(res => res.json())
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/alejo")
+						fetch("http://127.0.0.1:5000/api/medidynamo/read/patients")
 							.then(red => red.json())
 							.then(data => setStore({ allContacts: data }));
 					})
@@ -151,7 +155,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (status === 400) alert(resMsg);
 					})
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/alejo")
+						fetch("http://127.0.0.1:5000/api/medidynamo/read/patients")
 							.then(res => res.json())
 							.then(data => setStore({ allContacts: data }));
 					})
