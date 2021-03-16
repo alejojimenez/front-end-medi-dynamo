@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 
 export const AddPatient = props => {
 	const { actions, store } = useContext(Context);
@@ -21,13 +21,13 @@ export const AddPatient = props => {
 
 	return (
 		<div className="container">
-			<div>
-				<h1 className="text-center mt-5">Agregar nuevo paciente</h1>
+			<h2 className="color-text-general text-center mt-5"><strong>Agregar Nuevo Paciente</strong></h2>
+			<div className="bg-size-form-addPatient">
 				<form>
 					<Row>
-						<Col md = {12}>
+						<Col md = {6}>
 							<div className="form-group">
-								<label>RUT:</label>
+								<label><strong>RUT:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, rut: event.target.value });
@@ -42,7 +42,7 @@ export const AddPatient = props => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Nombres:</label>
+								<label><strong>Nombres:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, firstname: event.target.value });
@@ -55,7 +55,7 @@ export const AddPatient = props => {
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Apellidos:</label>
+								<label><strong>Apellidos:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, lastname: event.target.value });
@@ -70,7 +70,7 @@ export const AddPatient = props => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Edad:</label>
+								<label><strong>Edad:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, age: event.target.value });
@@ -83,7 +83,7 @@ export const AddPatient = props => {
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Sexo:</label>
+								<label><strong>Sexo:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, sex: event.target.value });
@@ -98,7 +98,7 @@ export const AddPatient = props => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Direccion:</label>
+								<label><strong>Direccion:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, address: event.target.value });
@@ -111,7 +111,7 @@ export const AddPatient = props => {
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Telefono:</label>
+								<label><strong>Telefono:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, telephone: event.target.value });
@@ -126,7 +126,7 @@ export const AddPatient = props => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>E-mail:</label>
+								<label><strong>E-mail:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, email: event.target.value });
@@ -139,7 +139,7 @@ export const AddPatient = props => {
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label>Previsión Social:</label>
+								<label><strong>Previsión Social:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, forecast: event.target.value });
@@ -151,18 +151,26 @@ export const AddPatient = props => {
 							</div>
 						</Col>
 					</Row>
-					<button
-						onClick={() => {
-							actions.addContacts(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
-							props.history.push("/patients");
-						}}
-						type="button"
-						className="btn btn-primary form-control">
-						save
-					</button>
-					<Link className="mt-3 w-100 text-center" to="/patients">
-						Retornar
-					</Link>
+					<Row>
+						<Col md = {4}>
+							<Button
+								onClick={() => {
+									actions.addContacts(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
+									props.history.push("/patients");
+								}}
+								type="button"
+								className="btn btn-primary form-control">
+								save
+							</Button>
+						</Col>
+						<Col md = {4}>
+							<Button>
+								<Link className="mt-3 w-100 text-center" to="/patients">
+									Retornar
+								</Link>
+							</Button>
+						</Col>
+					</Row>
 				</form>
 			</div>
 		</div>
