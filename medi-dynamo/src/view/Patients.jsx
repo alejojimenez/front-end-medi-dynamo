@@ -31,6 +31,7 @@ export const Patients = () => {
 									age={item.age}
 									sex={item.sex}
 									address={item.address}
+									email={item.email}
 									telephone={item.telephone}
 									key={index}
 									index={index}

@@ -23,9 +23,20 @@
 }
 
 .bg-size-form-addPatient {
-  background-color: #cacbce;
   margin-top: 50px;
-  padding: 15px;
+  padding: 25px;
+  border-style: solid;
+  border-color: #546BBD;
+  border-width: 1px;
+}
+
+.mt-view-patients-card {
+  margin-top: 50px;
+}
+
+.input-style {
+  background-color: #84899b;
+  color: white;
 }
 
 /* ####  Screen Desktop #### */

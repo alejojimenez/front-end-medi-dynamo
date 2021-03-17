@@ -10,65 +10,81 @@ export const PatientsCard = (props) => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<li className="list-group-item">
-			<div className="row w-100">
-				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid" />
-				</div>
-				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-					<div className=" float-right">
-						<Row>
-							<Col>
-								<Link className="btn" to={"/edit/" + props.id}>
-									<i className="fas fa-pencil-alt fa-2x mr-3" />
-								</Link>
-							</Col>
-							<Col>
-								<button className="btn" onClick={() => props.onDelete()}>
-									<i className="fas fa-trash-alt fa-2x" />
-								</button>
-							</Col>
-						</Row>
+		<>
+		<div className="container">
+			<ul>
+				<li className="list-group-item">
+					<div className="row w-100">
+						<div className="col-12 col-sm-6 col-md-3 px-0">
+							<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid" />
+						</div>
+						<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+							<div className=" float-right">
+								<Row>
+									<Col>
+										<Link className="btn" to={"/edit/" + props.id}>
+											<i className="fas fa-pencil-alt fa-2x mr-3" />
+										</Link>
+									</Col>
+									<Col>
+										<button className="btn" onClick={() => props.onDelete()}>
+											<i className="fas fa-trash-alt fa-2x" />
+										</button>
+									</Col>
+								</Row>
+							</div>
+							<Row>
+								<Col md = {12}>
+									<label className="name lead"><strong>{props.firstname} {" "} {props.lastname}</strong></label>
+								</Col>
+							</Row>
+							<Row>
+								<Col md = {6}>
+									<i className="fas fa-id-card text-muted mr-3" />
+									<span className="text-muted">{props.rut}</span>
+								</Col>
+								<Col md = {6}>
+									<i className="fas fa-medkit text-muted mr-3" />
+									<span className="text-muted">{props.forecast}</span>
+								</Col>
+							</Row>
+							<Row>
+								<Col md = {6}>
+									<i className="fas fa-hourglass-half text-muted mr-3" />
+									<span className="text-muted">{props.age}</span>
+								</Col>
+								<Col md = {6}>
+									<i className="fas fa-venus-mars text-muted mr-3" />
+									<span className="text-muted">{props.sex}</span>
+								</Col>
+							</Row>
+							<Row>
+								<Col md = {6}>
+										<i className="fas fa-envelope text-muted mr-3" />
+										<span className="text-muted">{props.email}</span>
+								</Col>
+								<Col md = {6}>
+									<span
+										className="fas fa-phone fa-fw text-muted mr-3"
+										data-toggle="tooltip"
+										title=""
+										data-original-title="(870) 288-4149"
+									/>
+									<span className="text-muted small">{props.telephone}</span>
+								</Col>
+							</Row>
+							<Row>
+								<Col md = {6}>
+										<i className="fas fa-map-marker-alt text-muted mr-3" />
+										<span className="text-muted">{props.address}</span>
+								</Col>
+							</Row>
+						</div>
 					</div>
-					<label className="name lead">{props.firstname} {" "} {props.lastname}</label>
-					<Row>
-						<Col className="justify-content-start">
-							<i className="fas fa-id-card text-muted mr-3" />
-							<span className="text-muted">{props.rut}</span>
-						</Col>
-						<Col className="justify-content-start">
-							<i className="fas fa-medkit text-muted mr-3" />
-							<span className="text-muted">{props.forecast}</span>
-						</Col>
-					</Row>
-					<Row>
-						<Col className="justify-content-start">
-							<i className="fas fa-hourglass-half text-muted mr-3" />
-							<span className="text-muted">{props.age}</span>
-						</Col>
-						<Col className="justify-content-start">
-							<i className="fas fa-venus-mars text-muted mr-3" />
-							<span className="text-muted">{props.sex}</span>
-						</Col>
-					</Row>
-					<Row>
-						<Col className="justify-content-start">
-							<i className="fas fa-map-marker-alt text-muted mr-3" />
-							<span className="text-muted">{props.address}</span>
-						</Col>
-						<Col className="justify-content-start">
-							<span
-								className="fas fa-phone fa-fw text-muted mr-3"
-								data-toggle="tooltip"
-								title=""
-								data-original-title="(870) 288-4149"
-							/>
-							<span className="text-muted small">{props.telephone}</span>
-						</Col>
-					</Row>
-				</div>
-			</div>
-		</li>
+				</li>
+			</ul>
+		</div>
+		</>
 	);
 };
 
@@ -85,9 +101,10 @@ PatientsCard.propTypes = {
 	forecast: PropTypes.string,
 	firstname: PropTypes.string,
 	lastname: PropTypes.string,
-	age: PropTypes.string,
+	age: PropTypes.number,
 	sex: PropTypes.string,
 	address: PropTypes.string,
+	email: PropTypes.string,
 	telephone: PropTypes.string,
 	id: PropTypes.string
 };

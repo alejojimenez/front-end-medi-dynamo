@@ -2,21 +2,21 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
-import { Col, Row, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
-export const AddPatient = props => {
+export const AddPatient = (props) => {
 	const { actions, store } = useContext(Context);
 	console.log("props en Component AddPatient", props);
 	const [state, setState] = useState({
-		rut: null,
-		firstname: null,
-		lastname: null,
-		age: null,
-		sex: null,
-		address: null,
-		telephone: null,
-		email: null,
-		forecast: null
+		rut: "",
+		firstname: "",
+		lastname: "",
+		age: "",
+		sex: "",
+		address: "",
+		telephone: "",
+		email: "",
+		forecast: ""
 	});
 
 	return (
@@ -36,6 +36,7 @@ export const AddPatient = props => {
 									className="form-control"
 									placeholder="Ingrese rut del paciente"
 								/>
+								{console.log("State", state)};
 							</div>
 						</Col>
 					</Row>
@@ -151,28 +152,23 @@ export const AddPatient = props => {
 							</div>
 						</Col>
 					</Row>
-					<Row>
-						<Col md = {4}>
-							<Button
-								onClick={() => {
-									actions.addContacts(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
-									props.history.push("/patients");
-								}}
-								type="button"
-								className="btn btn-primary form-control">
-								save
-							</Button>
-						</Col>
-						<Col md = {4}>
-							<Button>
-								<Link className="mt-3 w-100 text-center" to="/patients">
-									Retornar
-								</Link>
-							</Button>
-						</Col>
-					</Row>
 				</form>
 			</div>
+			<p className="text-right my-3">
+						<Link className="btn btn-light"
+							onClick={() => {
+								actions.addPatients(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
+								props.history.push("/patients");
+							}}
+							type="button"
+						>
+							Guardar
+						</Link> 
+						{" "}
+						<Link className="btn btn-light" type="button" to="/patients">
+							Retornar
+						</Link>
+			</p>
 		</div>
 	);
 };

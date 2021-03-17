@@ -95,19 +95,19 @@ const getState = ({ getStore, getActions, setStore }) => {
             ///////////////////////////////////////////
 			addPatients: (rut, firstname, lastname, age, sex, address, telephone, email, forecast) => {
 				console.log("---Flux add - Put Patient---");
-				fetch("/api/medidynamo/create/patients", {
+				fetch("http://127.0.0.1:5000/api/medidynamo/create/patients", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-                        rut,
-                        firstname,
-                        lastname,
-                        age,
-                        sex,
-                        address,
-                        telephone,
-                        email,
-                        forecast
+                        "rut": rut,
+                        "firstname": firstname,
+                        "lastname": lastname,
+                        "age": age,
+                        "sex": sex,
+                        "address": address,
+                        "telephone": telephone,
+                        "email": email,
+                        "forecast": forecast
 					})
 				})
 					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
@@ -136,18 +136,22 @@ const getState = ({ getStore, getActions, setStore }) => {
             /////////////////////////////////////////////////
 			// Cambiar valores de un Contacto de la Agenda //
             /////////////////////////////////////////////////
-			editPatient: (name, address, phone, email, idToEdit) => {
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToEdit}`, {
+			editPatient: (rut, firstname, lastname, age, sex, address, telephone, email, forecast, idToEdit) => {
+				fetch(`http://127.0.0.1:5000/api/medidynamo/update/patient/${idToEdit}`, {
 					method: "PUT",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						agenda_slug: "alejo",
-						full_name: name,
-						email,
-						address,
-						phone
+                        "rut": rut,
+                        "firstname": firstname,
+                        "lastname": lastname,
+                        "age": age,
+                        "sex": sex,
+                        "address": address,
+                        "telephone": telephone,
+                        "email": email,
+                        "forecast": forecast
 					})
 				})
 					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
