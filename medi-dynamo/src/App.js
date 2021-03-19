@@ -11,6 +11,7 @@ import Signup from './view/Signup';
 import Footer from '../src/component/Footer';
 import { Patients } from './view/Patients';
 import { AddPatient } from './component/AddPatient';
+import { EditPatient } from './component/EditPatient';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/register" component={Signup}/>
             <Route exact path="/patients" component={Patients} />
             <Route exact path="/addpatient" component={AddPatient} />
+            <Route exact path="/editpatient/:id" component={EditPatient} />
             <Route render={() => <h1>Not Found</h1>}/>
 
             {/*<Route component={Login} path="/login"/>

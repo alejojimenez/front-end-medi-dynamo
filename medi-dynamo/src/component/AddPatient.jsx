@@ -23,6 +23,7 @@ export const AddPatient = (props) => {
 		<div className="container">
 			<h2 className="color-text-general text-center mt-5"><strong>Agregar Nuevo Paciente</strong></h2>
 			<div className="bg-size-form-addPatient">
+				{console.log("State", state)};
 				<form>
 					<Row>
 						<Col md = {6}>
@@ -36,7 +37,6 @@ export const AddPatient = (props) => {
 									className="form-control"
 									placeholder="Ingrese rut del paciente"
 								/>
-								{console.log("State", state)};
 							</div>
 						</Col>
 					</Row>
@@ -157,7 +157,17 @@ export const AddPatient = (props) => {
 			<p className="text-right my-3">
 						<Link className="btn btn-light"
 							onClick={() => {
-								actions.addPatients(state.rut, state.firstname, state.lastname, state.age, state.sex, state.address, state.telephone, state.email, state.forecast);
+								actions.addPatients(
+									state.rut, 
+									state.firstname, 
+									state.lastname, 
+									state.age, 
+									state.sex, 
+									state.address, 
+									state.telephone, 
+									state.email, 
+									state.forecast
+								);
 								props.history.push("/patients");
 							}}
 							type="button"

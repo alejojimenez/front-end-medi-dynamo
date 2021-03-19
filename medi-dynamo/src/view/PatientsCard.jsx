@@ -22,7 +22,7 @@ export const PatientsCard = (props) => {
 							<div className=" float-right">
 								<Row>
 									<Col>
-										<Link className="btn" to={"/edit/" + props.id}>
+										<Link className="btn" to={"/editpatient/" + props.id}>
 											<i className="fas fa-pencil-alt fa-2x mr-3" />
 										</Link>
 									</Col>
