@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 import PropTypes from "prop-types";
 
-export const PatientModal = props => {
+export const PatientModal = (props) => {
 	console.log("props en Component PatientModal", props);
 	const { actions } = useContext(Context);
 
@@ -38,7 +38,7 @@ export const PatientModal = props => {
 							className="btn btn-success"
 							data-dismiss="modal"
 							onClick={() => {
-								actions.delContacts(props.idToDelete);
+								actions.delPatient(props.idToDelete);
 								props.onClose();
 							}}>
 							Eliminar!

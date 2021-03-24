@@ -128,8 +128,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(() => {
 						fetch("http://127.0.0.1:5000/api/medidynamo/read/patients")
-							.then(red => red.json())
-							.then(data => setStore({ allContacts: data }));
+							.then(res => res.json())
+							.then(data => setStore({ allPatients: data }));
 					})
 					.catch(err => alert(err.message));
 			},
@@ -161,7 +161,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(() => {
 						fetch("http://127.0.0.1:5000/api/medidynamo/read/patients")
 							.then(res => res.json())
-							.then(data => setStore({ allContacts: data }));
+							.then(data => setStore({ allPatients: data }));
 					})
 					.catch(err => alert(err.message));
 			},
