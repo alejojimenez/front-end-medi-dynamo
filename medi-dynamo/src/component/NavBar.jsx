@@ -30,20 +30,20 @@ const NavBar = () => {
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
                 <Nav className="mr-auto">
                     <NavLink
-                        className="btn btn-outline-secondary mr-sm-2 btn-md"
+                        className="btn btn-light mr-sm-2"
                         size="sm"
                         to="/register"
                         exact
                         >
-                            Registrarse
+                            <i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse
                     </NavLink>
                     <NavLink
-                        className="btn btn-outline-secondary mr-sm-2 btn-md"
+                        className="btn btn-light mr-sm-2"
                         size="sm"
                         to="/login"
                         exact
                         >
-                            Iniciar Sesión
+                            <i class="fa fa-share" aria-hidden="true"></i> Iniciar Sesión
                     </NavLink>
                 </Nav>
             </Navbar>

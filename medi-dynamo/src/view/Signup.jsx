@@ -86,7 +86,7 @@ const Signup = (props) => {
                                                 />
                                             </div>
                                             <div>
-                                                <Button className="shadow-sm" type="submit" variant="outline-light" block><i class="fa fa-share" aria-hidden="true"></i> Registrarse</Button>
+                                                <Button className="shadow-sm" type="submit" variant="outline-light" block><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</Button>
                                             </div>
                                         </form>
                                     </Card.Text>

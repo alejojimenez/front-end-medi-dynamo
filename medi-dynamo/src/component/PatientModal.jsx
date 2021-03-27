@@ -27,12 +27,9 @@ export const PatientModal = (props) => {
 						)}
 					</div>
 					<div className="modal-body">
-						<p>Advertencia: eliminaras un Paciente!</p>
+						<p className="text-center font-weight-bold">Advertencia: eliminaras un Paciente!</p>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-light shadow-sm" onClick={props.onClose}>
-							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
-						</button>
 						<button
 							type="button"
 							className="btn btn-light shadow-sm"
@@ -42,6 +39,9 @@ export const PatientModal = (props) => {
 								props.onClose();
 							}}>
 							<i class="fa fa-thumbs-up" aria-hidden="true"></i> Eliminar
+						</button>
+						<button type="button" className="btn btn-light shadow-sm" onClick={props.onClose}>
+							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 						</button>
 					</div>
 				</div>
