@@ -15,12 +15,12 @@ export const PatientsCard = (props) => {
 			<ul className="w-100">
 				<li className="list-group-item">
 					<div className="row">
-							<Col md = {2}>
+							<Col md = {3}>
 								<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid" />
 							</Col>
 							<Col md = {4}>
 								<Row>
-									<Col md = {8}>
+									<Col>
 										<label className="name lead"><strong>{props.firstname} {" "} {props.lastname}</strong></label>
 									</Col>
 								</Row>
@@ -49,7 +49,12 @@ export const PatientsCard = (props) => {
 									</Col>
 								</Row>
 							</Col>
-							<Col md = {4}>
+							<Col md = {3}>
+								<Row>
+									<Col>
+										<span className="text-muted"> </span>
+									</Col>
+								</Row>
 								<Row>
 									<Col>
 										<i className="fas fa-medkit text-muted mr-3" />
@@ -74,7 +79,7 @@ export const PatientsCard = (props) => {
 									</Col>
 								</Row>
 							</Col>
-							<Col md = {2}>
+							<Col className = "justify-content-end" md = {2}>
 								<Link className="btn" to={"/editpatient/" + props.id}>
 									<i className="fas fa-pencil-alt fa-2x mr-3" />
 								</Link>
@@ -82,7 +87,6 @@ export const PatientsCard = (props) => {
 									<i className="fas fa-trash-alt fa-2x" />
 								</button>
 							</Col>
-
 					</div>
 				</li>
 			</ul>

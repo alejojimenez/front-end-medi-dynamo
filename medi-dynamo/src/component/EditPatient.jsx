@@ -22,18 +22,18 @@ export const EditPatient = (props) => {
 	return (
 		<div className="container">
 			<h2 className="color-text-general text-center mt-5"><strong>Editar Paciente</strong></h2>
-			<div className="bg-size-form-addPatient">
+			<div className="shadow p-4 mb-5 bg-size-form-addPatient rounded">
 				<form>
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>RUT:</strong></label>
+								<label><strong>Rut:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, rut: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice rut del paciente"
 									value={state.rut}
 								/>
@@ -49,7 +49,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, firstname: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice nombre del paciente"
 									value={state.firstname}
 								/>
@@ -63,7 +63,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, lastname: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice apellidos del paciente"
 									value={state.lastname}
 								/>
@@ -79,7 +79,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, age: event.target.value });
 									}}
 									type="number"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice edad del paciente"
 									value={state.age}
 								/>
@@ -93,7 +93,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, sex: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice sexo del paciente"
 									value={state.sex}
 								/>
@@ -103,13 +103,13 @@ export const EditPatient = (props) => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>Direccion:</strong></label>
+								<label><strong>Dirección:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, address: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice dirección Hab. del paciente"
 									value={state.address}
 								/>
@@ -117,13 +117,13 @@ export const EditPatient = (props) => {
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>Telefono:</strong></label>
+								<label><strong>Teléfono:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, telephone: event.target.value });
 									}}
 									type="phone"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice número de telefono del paciente"
 									value={state.telephone}
 								/>
@@ -139,7 +139,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, email: event.target.value });
 									}}
 									type="email"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice correo electronico del paciente"
 									value={state.email}
 								/>
@@ -153,7 +153,7 @@ export const EditPatient = (props) => {
 										setState({ ...state, forecast: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Actualice previsión social de paciente"
 									value={state.forecast}
 								/>
@@ -163,7 +163,7 @@ export const EditPatient = (props) => {
 				</form>
 			</div>
 			<p className="text-right my-3">
-				<Link className="btn btn-light"
+				<Link className={`btn ${disabledButton ? "btn-secondary" : "btn-light"} form-control shadow-sm`}
 					disabled={disabledButton}
 					onClick={() => {
 						actions.editPatient(
@@ -181,13 +181,12 @@ export const EditPatient = (props) => {
 						props.history.push("/patients");
 					}}
 					type="button"
-					className={`btn ${disabledButton ? "btn-secondary" : "btn-primary"} form-control`}
 				>
-					Guardar
+					<i class="fa fa-user-plus" aria-hidden="true"></i> Guardar
 				</Link> 
 				{" "}
-				<Link className="btn btn-light" type="button" to="/patients">
-					Retornar
+				<Link className="btn btn-light shadow-sm" type="button" to="/patients">
+					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 				</Link>
 			</p>
 		</div>

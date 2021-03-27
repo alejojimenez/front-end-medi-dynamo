@@ -8,7 +8,7 @@ export const PatientModal = (props) => {
 	const { actions } = useContext(Context);
 
 	return (
-		<div className="modal" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
+		<div className="shadow p-4 mb-5 modal rounded" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
 			<div className="modal-dialog" role="document">
 				<div className="modal-content">
 					<div className="modal-header">
@@ -30,18 +30,18 @@ export const PatientModal = (props) => {
 						<p>Advertencia: eliminaras un Paciente!</p>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-danger" onClick={props.onClose}>
-							Cerrar!
+						<button type="button" className="btn btn-light shadow-sm" onClick={props.onClose}>
+							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 						</button>
 						<button
 							type="button"
-							className="btn btn-success"
+							className="btn btn-light shadow-sm"
 							data-dismiss="modal"
 							onClick={() => {
 								actions.delPatient(props.idToDelete);
 								props.onClose();
 							}}>
-							Eliminar!
+							<i class="fa fa-thumbs-up" aria-hidden="true"></i> Eliminar
 						</button>
 					</div>
 				</div>

@@ -16,18 +16,18 @@ const Login = (props) => {
                 <div className="login-center">
                     <Row>
                         <Col>
-                            <Card className="bg-card" border="primary" style={{ width: '24rem' }}>
+                            <Card className="shadow p-3 mb-5 bg-card rounded" border="primary" style={{ width: '24rem' }}>
                                 <Card.Header className="text-center mb-2 color-card-header"><h3><strong>INICIAR SESION</strong></h3></Card.Header>
                                 <Card.Body className="text-center p-3">
                                     <Card.Text>
                                         <form onSubmit={(evento) => {actions.onSubmitSignin(evento); props.history.push("/home")}} >
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Usuario</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="text" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     placeholder="Ingrese su usuario" 
                                                     aria-label="Username" 
                                                     aria-describedby="basic-addon1" 
@@ -39,11 +39,11 @@ const Login = (props) => {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Email</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="email" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     placeholder="ingrese su name@example.com" 
                                                     aria-label="Email" 
                                                     aria-describedby="basic-addon1" 
@@ -55,11 +55,11 @@ const Login = (props) => {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Password</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="password" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     placeholder="Ingrese su password" 
                                                     aria-label="Password" 
                                                     aria-describedby="basic-addon1" 
@@ -71,7 +71,7 @@ const Login = (props) => {
                                             </div>   
                                             {console.log("Data User", store.user_data)}
                                             <div>
-                                                <Button type="submit" variant="outline-light" block>Ingresar</Button>                                        
+                                                <Button className="shadow-sm" type="submit" variant="outline-light" block><i class="fa fa-share" aria-hidden="true"></i> Ingresar</Button>                                        
                                             </div>                                     
                                         </form>
                                         

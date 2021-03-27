@@ -16,18 +16,18 @@ const Signup = (props) => {
                 <div className="login-center">
                     <Row>
                         <Col>
-                            <Card className="bg-card" border="primary" style={{ width: '24rem' }}>
+                            <Card className="shadow p-3 mb-5 bg-card rounded" border="primary" style={{ width: '24rem' }}>
                                 <Card.Header className="text-center mb-2 color-card-header"><h3><strong>REGISTRO DE USUARIO</strong></h3></Card.Header>
                                 <Card.Body className="text-center p-3">
                                     <Card.Text>
                                         <form onSubmit={(evento) => {actions.onSubmitSignup(evento); props.history.push("/login")}}>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">E-mail</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="email" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     id="inputEmail" 
                                                     placeholder="Ingrese su name@example.com" 
                                                     aria-label="Email" 
@@ -39,11 +39,11 @@ const Signup = (props) => {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Password</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="password" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     id="inputPassword" 
                                                     placeholder="Ingrese su password" 
                                                     aria-label="Password" 
@@ -55,11 +55,11 @@ const Signup = (props) => {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Nombre</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="text" 
-                                                    className="form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     id="inputName" 
                                                     placeholder="Ingrese su nombre" 
                                                     aria-label="Name" 
@@ -71,11 +71,11 @@ const Signup = (props) => {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="basic-addon1">Usuario</span>
+                                                    <span className="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
                                                     type="text" 
-                                                    class="form-control" 
+                                                    class="shadow-sm p-3 form-control" 
                                                     id="inputUsername" 
                                                     placeholder="Ingrese su usuario" 
                                                     aria-label="Username" 
@@ -86,15 +86,9 @@ const Signup = (props) => {
                                                 />
                                             </div>
                                             <div>
-                                                <Button 
-                                                    type="submit" 
-                                                    variant="outline-light" 
-                                                    block>
-                                                        Registrarse
-                                                </Button>
+                                                <Button className="shadow-sm" type="submit" variant="outline-light" block><i class="fa fa-share" aria-hidden="true"></i> Registrarse</Button>
                                             </div>
                                         </form>
-                                        {/* <Link to="/login"></Link> */}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>                                   

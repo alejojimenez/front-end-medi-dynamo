@@ -22,19 +22,19 @@ export const AddPatient = (props) => {
 	return (
 		<div className="container">
 			<h2 className="color-text-general text-center mt-5"><strong>Agregar Nuevo Paciente</strong></h2>
-			<div className="bg-size-form-addPatient">
-				{console.log("State", state)};
+			<div className="shadow p-4 mb-5 bg-size-form-addPatient rounded">
+				{console.log("State", state)}
 				<form>
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>RUT:</strong></label>
+								<label><strong>Rut:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, rut: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese rut del paciente"
 								/>
 							</div>
@@ -49,7 +49,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, firstname: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese nombre del paciente"
 								/>
 							</div>
@@ -62,7 +62,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, lastname: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese apellidos del paciente"
 								/>
 							</div>
@@ -77,7 +77,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, age: event.target.value });
 									}}
 									type="number"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese edad del paciente"
 								/>
 							</div>
@@ -90,7 +90,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, sex: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese sexo del paciente"
 								/>
 							</div>
@@ -99,26 +99,26 @@ export const AddPatient = (props) => {
 					<Row>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>Direccion:</strong></label>
+								<label><strong>Dirección:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, address: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese dirección Hab. del paciente"
 								/>
 							</div>
 						</Col>
 						<Col md = {6}>
 							<div className="form-group">
-								<label><strong>Telefono:</strong></label>
+								<label><strong>Teléfono:</strong></label>
 								<input
 									onChange={event => {
 										setState({ ...state, telephone: event.target.value });
 									}}
 									type="phone"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese número de telefono del paciente"
 								/>
 							</div>
@@ -133,7 +133,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, email: event.target.value });
 									}}
 									type="email"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese correo electronico del paciente"
 								/>
 							</div>
@@ -146,7 +146,7 @@ export const AddPatient = (props) => {
 										setState({ ...state, forecast: event.target.value });
 									}}
 									type="text"
-									className="form-control"
+									className="shadow-sm form-control"
 									placeholder="Ingrese previsión social de paciente"
 								/>
 							</div>
@@ -155,29 +155,29 @@ export const AddPatient = (props) => {
 				</form>
 			</div>
 			<p className="text-right my-3">
-						<Link className="btn btn-light"
-							onClick={() => {
-								actions.addPatients(
-									state.rut, 
-									state.firstname, 
-									state.lastname, 
-									state.age, 
-									state.sex, 
-									state.address, 
-									state.telephone, 
-									state.email, 
-									state.forecast
-								);
-								props.history.push("/patients");
-							}}
-							type="button"
-						>
-							Guardar
-						</Link> 
-						{" "}
-						<Link className="btn btn-light" type="button" to="/patients">
-							Retornar
-						</Link>
+				<Link className="btn btn-light shadow-sm"
+					onClick={() => {
+						actions.addPatients(
+							state.rut, 
+							state.firstname, 
+							state.lastname, 
+							state.age, 
+							state.sex, 
+							state.address, 
+							state.telephone, 
+							state.email, 
+							state.forecast
+						);
+						props.history.push("/patients");
+					}}
+					type="button"
+				>
+					<i class="fa fa-user-plus" aria-hidden="true"></i> Guardar
+				</Link> 
+				{" "}
+				<Link className="btn btn-light shadow-sm" type="button" to="/patients">
+					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
+				</Link>
 			</p>
 		</div>
 	);
