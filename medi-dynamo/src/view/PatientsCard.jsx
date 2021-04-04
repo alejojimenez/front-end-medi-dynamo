@@ -11,10 +11,14 @@ export const PatientsCard = (props) => {
 
 	return (
 		<>
-		<div className="container">
-			<ul className="w-100">
-				<li className="list-group-item">
-					<div className="row">
+		<div className="card shadow p-4 mb-1 rounded">
+			{/* <div className="card-header">
+				<h2 className="color-text-general text-center mt-5"><strong>Listado de Pacientes</strong></h2>
+			</div> */}
+			<div className="container">
+				<ul className="list-group list-group-flush">
+					<li className="list-group-item">
+						<div className="row">
 							<Col md = {3}>
 								<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid" />
 							</Col>
@@ -87,9 +91,10 @@ export const PatientsCard = (props) => {
 									<i className="fas fa-trash-alt fa-2x" />
 								</button>
 							</Col>
-					</div>
-				</li>
-			</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 		</>
 	);

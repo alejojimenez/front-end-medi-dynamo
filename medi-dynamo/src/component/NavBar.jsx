@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return (
         <>
-            <Navbar className="fixed-top" expand="lg">
+            <Navbar className="shadow fixed-top" expand="lg">
                 <Navbar.Brand href="#home">
                     <Link to="/home">
                         <img src={Logo} height="42" alt="logo" />

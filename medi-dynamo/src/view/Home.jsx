@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import "../style/Home.css";
 import NavBar from '../component/NavBar';
+// import Footer from '../component/Footer';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            {/* <Footer /> */}
         </>
     )
 }

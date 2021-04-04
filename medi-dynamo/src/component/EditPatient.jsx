@@ -21,7 +21,7 @@ export const EditPatient = (props) => {
 
 	return (
 		<div className="container">
-			<h2 className="color-text-general text-center mt-5"><strong>Editar Paciente</strong></h2>
+			<h2 className="color-text-general text-center mt-5"><strong>Editar Datos de Paciente</strong></h2>
 			<div className="shadow p-4 mb-5 bg-size-form-addPatient rounded">
 				<form>
 					<Row>
@@ -163,7 +163,7 @@ export const EditPatient = (props) => {
 				</form>
 			</div>
 			<p className="text-right my-3">
-				<Link className={`btn ${disabledButton ? "btn-secondary" : "btn-light"} form-control shadow-sm`}
+				<Link className={`btn ${disabledButton ? "btn-secondary" : "btn-light"} shadow-sm`}
 					disabled={disabledButton}
 					onClick={() => {
 						actions.editPatient(
