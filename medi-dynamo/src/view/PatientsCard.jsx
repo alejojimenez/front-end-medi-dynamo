@@ -11,16 +11,16 @@ export const PatientsCard = (props) => {
 
 	return (
 		<>
-		<div className="card shadow p-4 mb-1 rounded">
+		<div className="container">
 			{/* <div className="card-header">
 				<h2 className="color-text-general text-center mt-5"><strong>Listado de Pacientes</strong></h2>
 			</div> */}
-			<div className="container">
+			<div className="card shadow p-4 mb-1 rounded">
 				<ul className="list-group list-group-flush">
 					<li className="list-group-item">
 						<div className="row">
 							<Col md = {3}>
-								<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid" />
+								<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid mt-4 mb-4" />
 							</Col>
 							<Col md = {4}>
 								<Row>
@@ -83,7 +83,7 @@ export const PatientsCard = (props) => {
 									</Col>
 								</Row>
 							</Col>
-							<Col className = "justify-content-end" md = {2}>
+							<Col className = "justify-content-end mt-5" md = {2}>
 								<Link className="btn" to={"/editpatient/" + props.id}>
 									<i className="fas fa-pencil-alt fa-2x mr-3" />
 								</Link>

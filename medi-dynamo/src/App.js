@@ -5,7 +5,7 @@ import './style/App.css';
 
 //Secciones
 import Home from '../src/view/Home';
-// import NavBar from '../src/component/NavBar';
+import NavBar from '../src/component/NavBar';
 import Login from './view/Login';
 import Signup from './view/Signup';
 import Footer from '../src/component/Footer';
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Router>
-          {/* <NavBar /> */}
+          <NavBar />
           <Switch>
             <Redirect exact from="/" to="/home" />
             <Route exact path="/home" component={Home}/>

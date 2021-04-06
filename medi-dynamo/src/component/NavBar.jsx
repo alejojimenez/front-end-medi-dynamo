@@ -28,7 +28,7 @@ const NavBar = () => {
                     </Link>
                 </Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-                <Nav className="mr-auto">
+                <Nav className="form-inline ml-auto">
                     <NavLink
                         className="btn btn-light mr-sm-2 rounded-pill"
                         size="sm"
