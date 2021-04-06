@@ -163,7 +163,7 @@ export const EditPatient = (props) => {
 				</form>
 			</div>
 			<p className="text-right my-3">
-				<Link className={`btn ${disabledButton ? "btn-secondary" : "btn-light"} shadow-sm`}
+				<Link className={`btn ${disabledButton ? "btn-secondary" : "btn-light"} shadow-sm rounded-pill`}
 					disabled={disabledButton}
 					onClick={() => {
 						actions.editPatient(
@@ -185,7 +185,7 @@ export const EditPatient = (props) => {
 					<i class="fa fa-user-plus" aria-hidden="true"></i> Guardar
 				</Link> 
 				{" "}
-				<Link className="btn btn-light shadow-sm" type="button" to="/patients">
+				<Link className="btn btn-light shadow-sm rounded-pill" type="button" to="/patients">
 					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 				</Link>
 			</p>

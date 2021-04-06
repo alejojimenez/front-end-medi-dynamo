@@ -30,7 +30,7 @@ const NavBar = () => {
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
                 <Nav className="mr-auto">
                     <NavLink
-                        className="btn btn-light mr-sm-2"
+                        className="btn btn-light mr-sm-2 rounded-pill"
                         size="sm"
                         to="/register"
                         exact
@@ -38,7 +38,7 @@ const NavBar = () => {
                             <i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse
                     </NavLink>
                     <NavLink
-                        className="btn btn-light mr-sm-2"
+                        className="btn btn-light mr-sm-2 rounded-pill"
                         size="sm"
                         to="/login"
                         exact

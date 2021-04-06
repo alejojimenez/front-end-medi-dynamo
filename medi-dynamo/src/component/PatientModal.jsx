@@ -32,7 +32,7 @@ export const PatientModal = (props) => {
 					<div className="modal-footer">
 						<button
 							type="button"
-							className="btn btn-light shadow-sm"
+							className="btn btn-light shadow-sm rounded-pill"
 							data-dismiss="modal"
 							onClick={() => {
 								actions.delPatient(props.idToDelete);
@@ -40,7 +40,7 @@ export const PatientModal = (props) => {
 							}}>
 							<i class="fa fa-thumbs-up" aria-hidden="true"></i> Eliminar
 						</button>
-						<button type="button" className="btn btn-light shadow-sm" onClick={props.onClose}>
+						<button type="button" className="btn btn-light shadow-sm rounded-pill" onClick={props.onClose}>
 							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 						</button>
 					</div>

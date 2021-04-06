@@ -155,7 +155,7 @@ export const AddPatient = (props) => {
 				</form>
 			</div>
 			<p className="text-right my-3">
-				<Link className="btn btn-light shadow-sm"
+				<Link className="btn btn-light shadow-sm rounded-pill"
 					onClick={() => {
 						actions.addPatients(
 							state.rut, 
@@ -175,7 +175,7 @@ export const AddPatient = (props) => {
 					<i class="fa fa-user-plus" aria-hidden="true"></i> Guardar
 				</Link> 
 				{" "}
-				<Link className="btn btn-light shadow-sm" type="button" to="/patients">
+				<Link className="btn btn-light shadow-sm rounded-pill" type="button" to="/patients">
 					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
 				</Link>
 			</p>
