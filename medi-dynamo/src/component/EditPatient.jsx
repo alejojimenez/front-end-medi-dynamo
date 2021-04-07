@@ -21,7 +21,7 @@ export const EditPatient = (props) => {
 
 	return (
 		<div className="container">
-			<h2 className="color-text-general text-center mt-5"><strong>Editar Datos de Paciente</strong></h2>
+			<h2 className="color-text-general text-center mt-view-patients-card"><strong>Editar Datos de Paciente</strong></h2>
 			<div className="shadow p-4 mb-5 bg-size-form-addPatient rounded">
 				<form>
 					<Row>

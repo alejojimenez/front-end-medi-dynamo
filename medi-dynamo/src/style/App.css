@@ -3,10 +3,15 @@
 
 .App {
   text-align: center;
+  background-color: darkgray;
 }
 
 .bg-card {
   background-image: linear-gradient(to bottom right, #546BBD, #84899b);
+}
+
+.bg-footer {
+  background-color: rgb(243, 247, 248);
 }
 
 .color-text-general {
@@ -29,16 +34,24 @@
   text-align: center;
 }
 
+.bg-list-card {
+  background-color: rgb(243, 247, 248);
+}
+
 .bg-size-form-addPatient {
   margin-top: 50px;
   padding: 25px;
   border-style: solid;
-  border-color: #546BBD;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+  border-bottom-color: white;
   border-width: 1px;
+  background-color: rgb(243, 247, 248);
 }
 
 .mt-view-patients-card {
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .input-style {

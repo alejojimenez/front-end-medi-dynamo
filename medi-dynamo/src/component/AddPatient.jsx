@@ -21,8 +21,8 @@ export const AddPatient = (props) => {
 
 	return (
 		<div className="container">
-			<h2 className="color-text-general text-center mt-5"><strong>Agregar Nuevo Paciente</strong></h2>
-			<div className="shadow p-4 mb-5 bg-size-form-addPatient rounded">
+			<h2 className="color-text-general text-center mt-view-patients-card"><strong>Agregar Nuevo Paciente</strong></h2>
+			<div className="col-12 shadow p-4 mb-5 bg-size-form-addPatient rounded">
 				{console.log("State", state)}
 				<form>
 					<Row>
@@ -154,7 +154,7 @@ export const AddPatient = (props) => {
 					</Row>
 				</form>
 			</div>
-			<p className="text-right my-3">
+			<p className="col-12 text-right my-3">
 				<Link className="btn btn-light shadow-sm rounded-pill"
 					onClick={() => {
 						actions.addPatients(

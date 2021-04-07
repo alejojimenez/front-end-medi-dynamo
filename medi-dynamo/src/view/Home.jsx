@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
             {/* <NavBar /> */}
-            <Container className="style-container-home" fluid>
+            <Container fluid>
                 <Row>
                     <Col className="col-home">
                         <div className="style-img-home">

@@ -12,12 +12,9 @@ export const PatientsCard = (props) => {
 	return (
 		<>
 		<div className="container">
-			{/* <div className="card-header">
-				<h2 className="color-text-general text-center mt-5"><strong>Listado de Pacientes</strong></h2>
-			</div> */}
-			<div className="card shadow p-4 mb-1 rounded">
+			<div className="card bg-list-card shadow p-1 mb-1 rounded">
 				<ul className="list-group list-group-flush">
-					<li className="list-group-item">
+					<li className="bg-list-card list-group-item">
 						<div className="row">
 							<Col md = {3}>
 								<img src={Patient} alt="Pacientes" className="rounded-circle mx-auto d-block img-fluid mt-4 mb-4" />
