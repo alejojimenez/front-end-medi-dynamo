@@ -1,3 +1,5 @@
+import Auth from './auth';
+
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
@@ -72,6 +74,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .then(data => {
                             console.log("Success:", data);
                             sessionStorage.setItem("u_token", data.token);
+                            console.log("Data Token:", data.token);
                             store.currentUser = store.user_data.username;
                             console.log("currentUser", store.currentUser);
                             if (data !== `{msg: "Username/Password are incorrect"}`) {
@@ -83,6 +86,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .catch(error => {
                             console.error("Error:", error);
                     });
+                    if(sessionStorage.getItem("u_token") !== " "){
+                        Auth.authenticated();
+                    }
                 }
             },
 
