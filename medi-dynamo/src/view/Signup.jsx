@@ -75,7 +75,7 @@ const Signup = (props) => {
                                                 </div>
                                                 <input 
                                                     type="text" 
-                                                    class="shadow-sm p-3 form-control" 
+                                                    className="shadow-sm p-3 form-control" 
                                                     id="inputUsername" 
                                                     placeholder="Ingrese su usuario" 
                                                     aria-label="Username" 

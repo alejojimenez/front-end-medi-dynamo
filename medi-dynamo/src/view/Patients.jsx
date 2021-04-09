@@ -45,11 +45,11 @@ export const Patients = () => {
 				</div>
 				<p className="text-right my-3">
 						<Link className="btn btn-light shadow-sm rounded-pill" to="/addPatient">
-							<i class="fa fa-user-plus" aria-hidden="true"></i> Agregar nuevo paciente
+							<i className="fa fa-user-plus" aria-hidden="true"></i> Agregar nuevo paciente
 						</Link> 
 						{" "}
 						<Link className="btn btn-light shadow-sm rounded-pill" to="/home">
-							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
+							<i className="fa fa-reply" aria-hidden="true"></i> Retornar
 						</Link>
 				</p>
 				<PatientModal

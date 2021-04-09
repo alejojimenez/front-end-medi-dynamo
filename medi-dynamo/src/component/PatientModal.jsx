@@ -38,10 +38,10 @@ export const PatientModal = (props) => {
 								actions.delPatient(props.idToDelete);
 								props.onClose();
 							}}>
-							<i class="fa fa-thumbs-up" aria-hidden="true"></i> Eliminar
+							<i className="fa fa-thumbs-up" aria-hidden="true"></i> Eliminar
 						</button>
 						<button type="button" className="btn btn-light shadow-sm rounded-pill" onClick={props.onClose}>
-							<i class="fa fa-reply" aria-hidden="true"></i> Retornar
+							<i className="fa fa-reply" aria-hidden="true"></i> Retornar
 						</button>
 					</div>
 				</div>

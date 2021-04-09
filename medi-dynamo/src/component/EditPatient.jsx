@@ -186,7 +186,7 @@ export const EditPatient = (props) => {
 				</Link> 
 				{" "}
 				<Link className="btn btn-light shadow-sm rounded-pill" type="button" to="/patients">
-					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
+					<i className="fa fa-reply" aria-hidden="true"></i> Retornar
 				</Link>
 			</p>
 		</div>

@@ -172,11 +172,11 @@ export const AddPatient = (props) => {
 					}}
 					type="button"
 				>
-					<i class="fa fa-user-plus" aria-hidden="true"></i> Guardar
+					<i className="fa fa-user-plus" aria-hidden="true"></i> Guardar
 				</Link> 
 				{" "}
-				<Link className="btn btn-light shadow-sm rounded-pill" type="button" to="/patients">
-					<i class="fa fa-reply" aria-hidden="true"></i> Retornar
+				<Link classNameName="btn btn-light shadow-sm rounded-pill" type="button" to="/patients">
+					<i className="fa fa-reply" aria-hidden="true"></i> Retornar
 				</Link>
 			</p>
 		</div>
