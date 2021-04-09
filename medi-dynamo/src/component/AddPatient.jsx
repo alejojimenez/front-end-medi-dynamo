@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Col, Row } from "react-bootstrap";
 
 export const AddPatient = (props) => {
-	const { actions, store } = useContext(Context);
+	const { actions } = useContext(Context);
 	console.log("props en Component AddPatient", props);
 	const [state, setState] = useState({
 		rut: "",

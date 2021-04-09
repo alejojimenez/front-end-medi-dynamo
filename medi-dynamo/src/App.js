@@ -18,29 +18,18 @@ function App() {
   return (
     <>
       <Router>
-          <NavBar />
-          <Switch>
-            <Redirect exact from="/" to="/home" />
-            <Route exact path="/home" component={Home}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/register" component={Signup}/>
-            <Route exact path="/patients" component={Patients} />
-            <Route exact path="/addpatient" component={AddPatient} />
-            <Route exact path="/editpatient/:id" component={EditPatient} />
-            <Route render={() => <h1>Not Found</h1>}/>
-
-            {/*<Route component={Login} path="/login"/>
-            <Route component={Signup} path="/signup"/>
-            <Route path="/compania" component={ViewCompany}/>
-            <Route path="/contenedores" component={Containers}/>
-            <Route path="/notificaciones" component={Notifications}/>
-            <Route path="/operadores" component={RootOperator}/>
-            <Route exact path="/quienes-somos" component={WhoWeAre} />
-            <Route exact path="/planes-de-pago" component={PayMethod} />
-            <Route exact path="/contactanos" component={Contact} />
-            <Route exact path="/enviar-notificacion" component={SendNotify} /> */}
-          </Switch>
-          <Footer />
+        <NavBar />
+        <Switch>
+          <Redirect exact from="/" to="/home" />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Signup} />
+          <Route exact path="/patients" component={Patients} />
+          <Route exact path="/addpatient" component={AddPatient} />
+          <Route exact path="/editpatient/:id" component={EditPatient} />
+          <Route render={() => <h1>Not Found</h1>} />
+        </Switch>
+        <Footer />
       </Router>
     </>
   );
