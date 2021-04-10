@@ -8,7 +8,6 @@ import Home from '../src/view/Home';
 import NavBar from '../src/component/NavBar';
 import Login from './view/Login';
 import Signup from './view/Signup';
-import Auth from './store/auth';
 import Footer from '../src/component/Footer';
 import { Patients } from './view/Patients';
 import { AddPatient } from './component/AddPatient';

@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-//import { Row, Col } from 'react-bootstrap';
 import { PatientsCard } from "./PatientsCard";
 import { PatientModal } from "../component/PatientModal";
 import { Context } from "../store/appContext.js";

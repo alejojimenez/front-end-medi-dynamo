@@ -1,5 +1,3 @@
-import Auth from './auth';
-
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
@@ -7,16 +5,32 @@ const getState = ({ getStore, getActions, setStore }) => {
             user_data:{
                 email:"",
                 password:"",
+                token:"",
                 name:"",
                 username:""
             },
 
-            currentUser: "",
+            currentUser: null,
 
             allPatients: [],
 
         },
         actions: {
+            /////////////////////////////////////////////////
+            // funcion obtener token - Sesion de usuarios  //
+            /////////////////////////////////////////////////
+			getToken: () => {
+				const localToken = localStorage.getItem("token");
+				const localUser = JSON.parse(localStorage.getItem("user"));
+				setStore({
+					user_data: {
+						token: localToken,
+						user: localUser
+					}
+				});
+				console.log("Token Local -->", localToken);
+				console.log("User Local -->", (localUser));
+			},            
             /////////////////////////////////////////////////
             // funcion input controlado - captura de datos //
             /////////////////////////////////////////////////
@@ -73,11 +87,19 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .then(response => response.json())
                         .then(data => {
                             console.log("Success:", data);
-                            sessionStorage.setItem("u_token", data.token);
-                            console.log("Data Token:", data.token);
-                            store.currentUser = store.user_data.username;
+
+                            setStore({ user_data: data });
+                            setStore({ currentUser: data.user.username });
+
                             console.log("currentUser", store.currentUser);
-                            if (data !== `{msg: "Username/Password are incorrect"}`) {
+                            if (typeof Storage !== "undefined") {
+                                localStorage.setItem("token", data.token);
+                                sessionStorage.setItem("user", data.user.username);
+                            } else {
+                                // LocalStorage no soportado en este navegador
+                            }
+
+                            if (localStorage.setItem("token") !== " ") {
                                 alert("Usuario Validado con Exito!!!");
                             } else {
                                 alert("Datos suministrados Incorrectos!!!");
@@ -86,9 +108,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .catch(error => {
                             console.error("Error:", error);
                     });
-                    if(sessionStorage.getItem("u_token") !== " "){
-                        Auth.authenticated();
-                    }
                 }
             },
 

@@ -33,7 +33,6 @@ const Login = (props) => {
                                                     aria-describedby="basic-addon1" 
                                                     name="username"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
-                                                    // onChange= {evento => setDetails({...details, username: evento.target.value})} 
                                                     value={store.user_data.username}
                                                 />
                                             </div>
@@ -49,7 +48,6 @@ const Login = (props) => {
                                                     aria-describedby="basic-addon1" 
                                                     name="email"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
-                                                    // onChange= {evento => setDetails({...details, email: evento.target.value})} 
                                                     value={store.user_data.email}
                                                 />
                                             </div>
@@ -65,7 +63,6 @@ const Login = (props) => {
                                                     aria-describedby="basic-addon1" 
                                                     name="password"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
-                                                    // onChange= {evento => setDetails({...details, password: evento.target.value})} 
                                                     value={store.user_data.password}
                                                 />
                                             </div>   
@@ -74,7 +71,6 @@ const Login = (props) => {
                                                 <Button className="shadow-sm" type="submit" variant="outline-light" block><i class="fa fa-share" aria-hidden="true"></i> Ingresar</Button>                                        
                                             </div>                                     
                                         </form>
-                                        
                                     </Card.Text>
                                 </Card.Body>
                             </Card>                
