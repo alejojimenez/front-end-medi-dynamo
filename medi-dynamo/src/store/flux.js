@@ -10,26 +10,26 @@ const getState = ({ getStore, getActions, setStore }) => {
                 username:""
             },
 
-            currentUser: null,
+            currentUser: null, // no en uso
 
             allPatients: [],
 
         },
         actions: {
-            /////////////////////////////////////////////////
-            // funcion obtener token - Sesion de usuarios  //
-            /////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////
+            // funcion obtener token - Sesion de usuarios - Browser Storage //
+            //////////////////////////////////////////////////////////////////
 			getToken: () => {
 				const localToken = localStorage.getItem("token");
-				const localUser = JSON.parse(localStorage.getItem("user"));
+				const localUser = localStorage.getItem("user");
 				setStore({
 					user_data: {
 						token: localToken,
-						user: localUser
+						username: localUser
 					}
 				});
-				console.log("Token Local -->", localToken);
-				console.log("User Local -->", (localUser));
+				console.log("Token Session -->", localToken);
+				console.log("User Session -->", localUser);
 			},            
             /////////////////////////////////////////////////
             // funcion input controlado - captura de datos //
@@ -87,14 +87,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                         .then(response => response.json())
                         .then(data => {
                             console.log("Success:", data);
-
                             setStore({ user_data: data });
-                            setStore({ currentUser: data.user.username });
 
-                            console.log("currentUser", store.currentUser);
+                            // Actualizar Browser Storage
                             if (typeof Storage !== "undefined") {
                                 localStorage.setItem("token", data.token);
-                                sessionStorage.setItem("user", data.user.username);
+                                localStorage.setItem("user", data.user.username);
                             } else {
                                 // LocalStorage no soportado en este navegador
                             }

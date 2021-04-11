@@ -7,16 +7,17 @@ import "../style/Home.css";
 const Home = () => {
 
 	const { store, actions } = useContext(Context);
-    console.log("Home Token", store.user_data.token)
+    console.log("Home Token 1", store.user_data.token)
 	useEffect(() => {
 		actions.getToken();
 	}, []);
 
+    console.log("Home Token 2", store.user_data.token)
     return (
         <>
 			{store.user_data.token !== null ? (       
                 <>
-                    <NavBar /> 
+                    <NavBar />
                     <Container fluid>
                         <Row>
                             <Col className="col-home">

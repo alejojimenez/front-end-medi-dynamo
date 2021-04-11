@@ -17,7 +17,7 @@ const NavBar = () => {
 
     return (
         <>
-        { store.currentUser !== null ? (
+        { store.user_data.username !== null ? (
             <Navbar className="shadow fixed-top bg-footer" bg="light" expand="lg">
                 <Navbar.Brand className="color-text-general">
                     <Link to='/home'><img src={Logo} height="40" alt="logo" /></Link>
@@ -41,12 +41,12 @@ const NavBar = () => {
                         <Nav.Link className="mr-5 h5">
                             <Link className="color-text" to='/shifts'><i className="color-text fa fa-clock" aria-hidden="true"></i> Turnos</Link>
                         </Nav.Link>
-                        <Nav.Link className="mr-5 h5">
+                        <Nav.Link className="h5">
                             <Link className="color-text" to='/campus'><i className="color-text fa fa-hospital" aria-hidden="true"></i> Sedes</Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                <h5 className="color-text">¡Hola, Bienvenido {store.currentUser}!</h5>
+                <h5 className="color-text-general pr-3">¡Hola, Bienvenido {store.user_data.username}!</h5>
                 <button className="btn btn-light mr-sm-2 rounded-pill" onClick={() => cerrarSesion()}>
                     <i className="fa fa-reply" aria-hidden="true"></i> Cerrar Sesión
                 </button>
