@@ -82,10 +82,10 @@ export const PatientsCard = (props) => {
 							</Col>
 							<Col className = "justify-content-end mt-5" md = {2}>
 								<Link className="btn" to={"/editpatient/" + props.id}>
-									<i className="fas fa-pencil-alt fa-2x mr-3" />
+									<i className="color-text fas fa-pencil-alt fa-2x mr-3" />
 								</Link>
 								<button className="btn" onClick={() => props.onDelete()}>
-									<i className="fas fa-trash-alt fa-2x" />
+									<i className="color-text fas fa-trash-alt fa-2x" />
 								</button>
 							</Col>
 						</div>

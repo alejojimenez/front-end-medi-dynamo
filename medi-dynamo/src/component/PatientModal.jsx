@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext.js";
 import PropTypes from "prop-types";
+import '../style/App.css';
 
 export const PatientModal = (props) => {
 	console.log("props en Component PatientModal", props);

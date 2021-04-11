@@ -6,6 +6,10 @@
   background-color: darkgray;
 }
 
+.modal-content {
+  margin-top: 250px;
+}
+
 .bg-card {
   background-image: linear-gradient(to bottom right, #546BBD, #84899b);
 }
