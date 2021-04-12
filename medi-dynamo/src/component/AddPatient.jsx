@@ -154,7 +154,7 @@ export const AddPatient = (props) => {
 					</Row>
 				</form>
 			</div>
-			<p className="col-12 text-right my-3">
+			<p className="col-12 text-right mt-3 mb-5">
 				<Link className="btn btn-light shadow-sm rounded-pill"
 					onClick={() => {
 						actions.addPatients(

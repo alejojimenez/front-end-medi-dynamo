@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Context } from "../store/appContext";
 import { Button, Card, Row, Col } from 'react-bootstrap';
-import '../style/App.css';
 import NavBar from '../component/NavBar';
 import PropTypes from "prop-types";
+import '../style/App.css';
 
 const Login = (props) => {
 

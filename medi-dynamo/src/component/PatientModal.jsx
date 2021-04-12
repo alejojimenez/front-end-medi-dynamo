@@ -12,7 +12,7 @@ export const PatientModal = (props) => {
 			<div className="modal-dialog" role="document">
 				<div className="modal-content">
 					<div className="modal-header">
-						<h5 className="modal-title">Estas seguro?</h5>
+						<h5 className="color-text-general modal-title">¿Estas seguro?</h5>
 						{props.onClose ? (
 							<button
 								onClick={() => props.onClose()}
@@ -27,7 +27,7 @@ export const PatientModal = (props) => {
 						)}
 					</div>
 					<div className="modal-body">
-						<p className="text-center font-weight-bold">Advertencia: eliminaras un Paciente!</p>
+						<p className="color-text text-center font-weight-bold">Advertencia: eliminaras un Paciente!</p>
 					</div>
 					<div className="modal-footer">
 						<button

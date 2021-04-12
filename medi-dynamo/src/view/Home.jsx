@@ -8,6 +8,7 @@ const Home = () => {
 
 	const { store, actions } = useContext(Context);
     console.log("Home Token 1", store.user_data.token)
+    console.log("User Home Data:", store.user_data.username)
 	useEffect(() => {
 		actions.getToken();
 	}, []);

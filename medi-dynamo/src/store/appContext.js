@@ -19,6 +19,7 @@ const injectContext = PassedComponent => {
 			})
 		);
         useEffect(() => {
+			state.actions.getPatients("http://127.0.0.1:5000/api/medidynamo/read/patients")
 			// state.actions.getContainer("http://127.0.0.1:5000/api/container")
 			// state.actions.getOperator("http://127.0.0.1:5000/api/operator")
 			// state.actions.getCompany("http://127.0.0.1:5000/api/compania")

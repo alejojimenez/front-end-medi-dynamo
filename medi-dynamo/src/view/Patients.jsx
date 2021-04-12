@@ -42,7 +42,7 @@ export const Patients = () => {
 						))}
 					</ul>
 				</div>
-				<p className="text-right my-3">
+				<p className="text-right mt-3 mb-5">
 						<Link className="btn btn-light shadow-sm rounded-pill" to="/addPatient">
 							<i className="fa fa-user-plus" aria-hidden="true"></i> Agregar nuevo paciente
 						</Link> 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from "../store/appContext";
 import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
@@ -9,18 +9,21 @@ import "../style/App.css";
 const NavBar = () => {
 
     const { store, actions } = useContext(Context);
-    console.log("Usuario Activo:", store.currentUser);
+    console.log("User NavBar Data:", store.currentUser);
+	useEffect(() => {
+		actions.getToken();
+	}, []);
 
-    const cerrarSesion = (props) => {
-        props.history.push("/login")
+    const cerrarSesion = () => {
+        localStorage.clear();
     };
 
     return (
         <>
-        { store.user_data.username !== null ? (
+        { store.user_data.token !== null ? (
             <Navbar className="shadow fixed-top bg-footer" bg="light" expand="lg">
                 <Navbar.Brand className="color-text-general">
-                    <Link to='/home'><img src={Logo} height="40" alt="logo" /></Link>
+                    <Link to='/home'><img src={Logo} height="40" alt="MediDynamo" /></Link>
                     MediDynamo
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,16 +49,16 @@ const NavBar = () => {
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                <h5 className="color-text-general pr-3">¡Hola, Bienvenido {store.user_data.username}!</h5>
-                <button className="btn btn-light mr-sm-2 rounded-pill" onClick={() => cerrarSesion()}>
+                <h5 className="color-text-general pr-3">¡Hola, Bienvenido {store.currentUser}!</h5>
+                <Link className="btn btn-light mr-sm-2 rounded-pill" onClick={() => cerrarSesion()} type="button" to="/home">
                     <i className="fa fa-reply" aria-hidden="true"></i> Cerrar Sesión
-                </button>
+                </Link>
             </Navbar>
             ) : (
             <Navbar className="shadow fixed-top bg-footer" expand="lg">
                 <Navbar.Brand className="color-text-general">
                     <Link to="/home">
-                        <img src={Logo} height="42" alt="logo" />
+                        <img src={Logo} height="42" alt="MediDynamo" />
                         MediDynamo
                     </Link>
                 </Navbar.Brand>

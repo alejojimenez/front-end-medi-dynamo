@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 username:""
             },
 
-            currentUser: null, // no en uso
+            currentUser: null,
 
             allPatients: [],
 
@@ -25,10 +25,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					user_data: {
 						token: localToken,
-						username: localUser
-					}
+						user: localUser
+					},
+                    currentUser: localUser
 				});
-				console.log("Token Session -->", localToken);
+                console.log("Token Session -->", localToken);
 				console.log("User Session -->", localUser);
 			},            
             /////////////////////////////////////////////////
@@ -97,7 +98,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                                 // LocalStorage no soportado en este navegador
                             }
 
-                            if (localStorage.setItem("token") !== " ") {
+                            if (localStorage.getItem("token") !== "undefined") {
                                 alert("Usuario Validado con Exito!!!");
                             } else {
                                 alert("Datos suministrados Incorrectos!!!");
