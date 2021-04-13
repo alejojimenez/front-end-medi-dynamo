@@ -1,5 +1,7 @@
 import injectContext from './store/appContext';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/App.css';
 

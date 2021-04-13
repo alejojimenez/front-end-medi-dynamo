@@ -26,6 +26,7 @@ const Login = (props) => {
                                                     <span className="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
+                                                    autoFocus
                                                     type="text" 
                                                     className="shadow-sm p-3 form-control" 
                                                     placeholder="Ingrese su usuario" 
@@ -34,6 +35,7 @@ const Login = (props) => {
                                                     name="username"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
                                                     value={store.user_data.username}
+                                                    required
                                                 />
                                             </div>
                                             <div className="input-group mb-3">
@@ -41,6 +43,7 @@ const Login = (props) => {
                                                     <span className="input-group-text" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
+                                                    autoFocus
                                                     type="email" 
                                                     className="shadow-sm p-3 form-control" 
                                                     placeholder="ingrese su name@example.com" 
@@ -49,6 +52,7 @@ const Login = (props) => {
                                                     name="email"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
                                                     value={store.user_data.email}
+                                                    required
                                                 />
                                             </div>
                                             <div className="input-group mb-3">
@@ -56,6 +60,7 @@ const Login = (props) => {
                                                     <span className="input-group-text" id="basic-addon1"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                                                 </div>
                                                 <input 
+                                                    autoFocus
                                                     type="password" 
                                                     className="shadow-sm p-3 form-control" 
                                                     placeholder="Ingrese su password" 
@@ -64,6 +69,7 @@ const Login = (props) => {
                                                     name="password"
                                                     onChange={(evento)=> actions.onChangeUser(evento)}
                                                     value={store.user_data.password}
+                                                    required
                                                 />
                                             </div>   
                                             {console.log("Data User", store.user_data)}
